@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="title-section">
+                <h1 class="title">TODO LIST </h1>
+            </div>
+            <form id="task-form" class="input-section">
+                <input id="todo-title" type="text" placeholder="Todo Title">
+                <textarea name="todo-desc" id="todo-desc" placeholder="description ..."></textarea>
+                <div class="lower">
+                    <label>Completion Date
+                        <input id="completion-date" type="date" name="" id="">
+                    </label>
+                    <label>Task status
+                        <select name="status" id="task-status">
+                            <option value="">Select Task Status</option>
+                            <option value="completed">Completed</option>
+                            <option value="uncompleted">Uncompleted</option>
+                        </select>
+                    </label>
+                    <input type="submit" value="Add Task">
+                </div>
+            </form>
+            <div class="main">
+                <div class="completed-section">
+                    <div class="title-section">
+                        <h3 class="title">Completed tasks</h3>
+                    </div>
+                    <div id="completed">
+                    </div>
+                </div>
+                <div class="uncompleted-section">
+                    <div class="title-section">
+                        <h3 class="title">Uncompleted tasks</h3>
+                    </div>
+                    <div id="uncompleted">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="edit_section">
+            <form id="task-form" class="input-section">
+                <input id="todo-title" type="text" placeholder="Todo Title">
+                <textarea name="todo-desc" id="todo-desc" placeholder="description ..."></textarea>
+                <div class="lower">
+                    <label>Completion Date
+                        <input id="completion-date" type="date" name="" id="">
+                    </label>
+                    <label>Task status
+                        <select name="status" id="task-status">
+                            <option value="">Select Task Status</option>
+                            <option value="completed">Completed</option>
+                            <option value="uncompleted">Uncompleted</option>
+                        </select>
+                    </label>
+                    <input type="submit" value="Save">
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- templates -->
+    <!-- uncompleted -->
+    <template id="uncompleted-task-template">
+        <div class="task-item task-item-uncompleted">
+            <iconify-icon class="icon" icon="ic:twotone-pending-actions"></iconify-icon>
+            <div class="task-details">
+                <div class="task-details">
+                    <div class="task-head">
+                        <h4 class="task-title">Coding Java</h4>
+                        <div class="actions">
+                            <iconify-icon class="icon-sm edit" icon="bx:edit"></iconify-icon>
+                            <iconify-icon class="icon-sm delete delete-uncompleted" icon="typcn:delete"></iconify-icon>
+                        </div>
+                    </div>
+                <p class="task-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Numquam similique assumenda quod sint omnis earum cum in expedita iure eligendi?</p>
+                <div class="task-time-tracking">
+                    <div class="task-created-at">
+                        <p>Created: <span class="created-at">27/07/2012</span> </p>
+                    </div>
+                    <div class="task-completed-on">
+                        <p>Deadline: <span class="deadline">27/07/2012</span> </p>
+                    </div>
+                    <div class="task-late">
+                        <p> <span class="days-late">4</span> </p>
+                    </div>
+                    <div class="mark-task-complete">
+                        <button>
+                            Done?
+                            <iconify-icon class="icon" icon="ic:round-download-done"></iconify-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+    <!-- completed -->
+    <template id="completed-task-template">
+        <div class="task-item-completed task-item ">
+            <iconify-icon class="icon" icon="mdi:tick-circle-outline"></iconify-icon>
+            <div class="task-details">
+                <div class="task-head">
+                    <h4 class="task-title">Coding Java</h4>
+                    <div class="actions">
+                        <!-- <iconify-icon class="icon-sm edit" icon="bx:edit"></iconify-icon> -->
+                        <iconify-icon class="icon-sm delete delete-completed" icon="typcn:delete"></iconify-icon>
+                    </div>
+                </div>
+                <p class="task-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Numquam similique assumenda quod sint omnis earum cum in expedita iure eligendi?</p>
+                <div class="task-time-tracking">
+                    <div class="task-created-at">
+                        <p>Created: <span class="created-at">27/07/2012</span></p>
+                    </div>
+                    <div class="task-completed-on">
+                        <p>Deadline: <span class='deadline'>23/07/2012</span> </p>
+                        <p>Completed: <span class="completed">27/07/2012</span> </p>
+                    </div>
+                    <div class="task-ealier">
+                        <p> <span class="days-ealier">4</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script src="./index.js"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+</body>
+
+</html>
